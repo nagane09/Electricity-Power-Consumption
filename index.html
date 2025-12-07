@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Power Consumption Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f7f9fc;
+        }
+        h2 {
+            color: #2E86C1;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+            max-width: 500px;
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #2E86C1;
+            color: white;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        input[type="submit"]:hover {
+            background-color: #1B4F72;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #1B4F72;
+        }
+    </style>
+</head>
+<body>
+    <h2>Power Consumption Prediction</h2>
+    <form method="POST">
+        <label>Temperature:</label>
+        <input type="number" name="Temperature" step="0.1" required>
+
+        <label>Humidity:</label>
+        <input type="number" name="Humidity" step="0.1" required>
+
+        <label>Wind Speed:</label>
+        <input type="number" name="WindSpeed" step="0.1" required>
+
+        <label>General Diffuse Flows:</label>
+        <input type="number" name="GeneralDiffuseFlows" step="0.1" required>
+
+        <label>Diffuse Flows:</label>
+        <input type="number" name="DiffuseFlows" step="0.1" required>
+
+        <label>Day:</label>
+        <input type="number" name="Day" min="1" max="31" required>
+
+        <label>Month:</label>
+        <input type="number" name="Month" min="1" max="12" required>
+
+        <label>Year:</label>
+        <input type="number" name="Year" min="2000" max="2100" required>
+
+        <label>Hour:</label>
+        <input type="number" name="Hour" min="0" max="23" required>
+
+        <label>Minute:</label>
+        <input type="number" name="Minute" min="0" max="59" required>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+    <div class="result">{{ prediction_text }}</div>
+    {% endif %}
+</body>
+</html>
