@@ -4,6 +4,8 @@
 🔗 **Live Demo:**  
 https://electricity-power-consumption.onrender.com/
 
+-----
+
 # ⚡ Power Consumption Prediction System
 
 A complete **end-to-end Machine Learning project** that predicts **power consumption (Zone 1)** using environmental and temporal features.  
@@ -131,17 +133,6 @@ The final model (Random Forest) works by:
 
 - Training multiple decision trees on random subsets of data
 - Averaging predictions to reduce variance  
-
-For each tree:
-
-\[
-\hat{y} = \frac{1}{N} \sum_{i=1}^{N} f_i(x)
-\]
-
-Where:  
-
-- \( f_i(x) \) is the prediction from the \(i\)-th tree  
-- \( N \) is the number of trees  
 
 🚀 **Future Improvements**  
 
